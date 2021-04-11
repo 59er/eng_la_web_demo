@@ -129,7 +129,7 @@ def run_edu_pass_fail_prediction_app():
                 y_train,
                 target_name = 'Fail/Pass',
                 feature_names = X_train.columns,
-                class_names = ['Fail','Pass'],
+                class_names = ['Fail','Pass']
             )
 
             def st_dtree(plot, height = None):
@@ -274,7 +274,7 @@ def run_edu_pass_fail_prediction_app():
             y_train,
             target_name = 'Fail/Pass',
             feature_names = X_train.columns,
-            class_names = ['Fail','Pass'],
+            class_names = ['Fail','Pass']
         )
 
         def st_dtree(plot, height = None):
