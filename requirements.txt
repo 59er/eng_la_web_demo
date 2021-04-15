@@ -1,6 +1,6 @@
 plotly == 4.14.3
 plotly.express == 0.4.1
-numpy == 1.19.5
+numpy == 1.20.0
 pandas == 1.1.5
 pydeck == 0.5.0
 streamlit == 0.79.0
