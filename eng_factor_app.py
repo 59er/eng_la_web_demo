@@ -61,7 +61,7 @@ def run_factor_app():
 
         fa = FactorAnalyzer(n_factors = 3, rotation='promax', impute = 'drop')
         fa.fit(df)
-        df_result = pd.DataFrame(fa.loadings_)
+        df_result = pd.DataFrame(fa.loadings_, columns = ['1st factor', '2nd factor', '3rd factor'], index = [df.columns])
 
         st.subheader('Factor Analysis Results')
         cm = sns.light_palette('blue', as_cmap=True)
