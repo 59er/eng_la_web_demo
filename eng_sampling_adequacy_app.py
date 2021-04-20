@@ -9,10 +9,18 @@ def run_sampling_adequacy_app():
 
     st.header('■Measure of Sampling Adequacy')
     st.write('To investigate the adequay of the number of samples for questionnaire.Kaiser-Meyer-Olkin (KMO) Test is used.')
-    st.sidebar.subheader('Data Upload')
-    st.sidebar.info("""
-    [Download the sample csv file](https://www.google.co.jp)
-            """)
+    
+    st.sidebar.subheader('Data upload')
+    df_edu = pd.read_csv("data/eng_sample_data_cluster.csv")
+    def download_link(object_to_download, download_filename, download_link_text):
+        if isinstance(object_to_download,pd.DataFrame):
+            object_to_download = object_to_download.to_csv(index=False, encoding = 'utf_8_sig')
+            b64 = base64.b64encode(object_to_download.encode()).decode()
+            return f'<a href="data:file/txt;base64,{b64}" download="{download_filename}">{download_link_text}</a>'
+
+    tmp_download_link = download_link(df_edu, 'sample_sampling.csv', 'Download sample csv file.')
+    st.sidebar.markdown(tmp_download_link, unsafe_allow_html=True)
+
     try:
 
         uploaded_file = st.sidebar.file_uploader("File upload (Drag and drop or use [Browse files] button to import csv file. Only utf-8 format is available.)", type=["csv"])
