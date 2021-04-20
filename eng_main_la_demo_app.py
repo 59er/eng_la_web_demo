@@ -14,6 +14,7 @@ from eng_factor_app import run_factor_app
 from eng_time_analysis_app import run_time_analysis_app
 from eng_edu_score_prediction_app import run_edu_score_prediction_app
 from eng_course_recommend_app import run_course_recommend_app
+from eng_sampling_adequacy_app import run_sampling_adequacy_app
 
 def main():
     st.title("Learning Analytics WEB Demo\n (β version)")
@@ -22,7 +23,7 @@ def main():
             'Correlation analysis',
             'Score prediction',
             'Pass/Fail Prediction','Questionnaire text analysis',
-            'Exam questions/questionnaire reliability measurement','Exam questions difficulty and discrimination analysis',
+            'Exam questions/questionnaire reliability measurement','Exam questions difficulty and discrimination analysis','Sampling adequacy',
             'Cluster analysis','t-test','Factor analysis','Time series analysis','Course recommend']
  
     choice = st.sidebar.selectbox("MENU",menu)
@@ -54,6 +55,8 @@ def main():
         st.write('To group students who have similar learning characteristics.')
         st.subheader('- t-test: ')
         st.write('To compare the results of two tests. e.g., examine the difference in performance by teaching method.')
+        st.subheader('Sampling adequacy')
+        st.write('To investigate the adequay of the number of samples for questionnaire.')
         st.subheader('- Factor analysis: ')
         st.write('To create and analyze a class evaluation questionnaire.')
         st.subheader("- Time series analysis:")
@@ -85,6 +88,9 @@ def main():
 
     elif choice == 'Exam questions difficulty and discrimination analysis':
         run_test_difficulty_app()
+        
+    elif choice == "Sampling adequacy":
+        run_sampling_adequacy_app()
 
     elif choice == "Cluster analysis":
         run_cluster_app()
