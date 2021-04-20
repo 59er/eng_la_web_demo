@@ -4,6 +4,7 @@ from factor_analyzer import FactorAnalyzer
 import matplotlib.pyplot as plt
 import streamlit as st 
 import seaborn as sns
+import base64
 
 def run_sampling_adequacy_app():
 
