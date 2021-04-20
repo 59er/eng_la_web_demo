@@ -11,7 +11,7 @@ def run_sampling_adequacy_app():
     st.write('To investigate the adequay of the number of samples for questionnaire.Kaiser-Meyer-Olkin (KMO) Test is used.')
     
     st.sidebar.subheader('Data upload')
-    df_edu = pd.read_csv("data/eng_sample_data_cluster.csv")
+    df_edu = pd.read_csv("data/eng_sample_data_detail.csv")
     def download_link(object_to_download, download_filename, download_link_text):
         if isinstance(object_to_download,pd.DataFrame):
             object_to_download = object_to_download.to_csv(index=False, encoding = 'utf_8_sig')
