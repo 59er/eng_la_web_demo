@@ -9,8 +9,10 @@ import base64
 def run_sampling_adequacy_app():
 
     st.header('■Measure of Sampling Adequacy')
-    st.write('To investigate the adequay of the number of samples for questionnaire.Kaiser-Meyer-Olkin (KMO) Test is used. KMO values between 0.8 and 1 indicate the sampling is adequate.
-KMO values less than 0.6 indicate the sampling is not adequate and that remedial action should be taken. Some authors put this value at 0.5, so use your own judgment for values between 0.5 and 0.6.')
+    st.write('To investigate the adequay of the number of samples for questionnaire.Kaiser-Meyer-Olkin (KMO) Test is used. ')
+    st.write('KMO values between 0.8 and 1 indicate the sampling is adequate.')
+    st.write('KMO values less than 0.6 indicate the sampling is not adequate and that remedial action should be taken. ')
+    st.write('Some authors put this value at 0.5, so use your own judgment for values between 0.5 and 0.6.')
     
     st.sidebar.subheader('Data upload')
     df_edu = pd.read_csv("data/eng_sample_data_sampling.csv")
