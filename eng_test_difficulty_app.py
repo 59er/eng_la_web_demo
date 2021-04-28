@@ -124,8 +124,8 @@ def run_test_difficulty_app():
             for i,j,k,l in zip(item_diff, D, A, df_edu.columns):
                 plt.scatter(i,j, c = 50, cmap='Blues', vmin=0.2, vmax = 0.99)
                 plt.annotate(l,xy = (i,j))
-            plt.xlabel('認識力')
-            plt.ylabel('難易度')
+            plt.xlabel('Discrimination')
+            plt.ylabel('Difficulty')
             plt.colorbar()
             #item_property.plot(kind = 'scatter', x = 'Discrimination', y = 'Difficulty', c = 'Alpha_if_dropped')
             plt.show()
