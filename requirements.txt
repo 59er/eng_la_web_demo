@@ -18,5 +18,4 @@ factor-analyzer == 0.3.2
 nlplot == 1.2.0
 statsmodels == 0.12.2
 Cython == 0.29.22
-sklearn == 0.0
 pillow == 8.0.1
