@@ -103,6 +103,17 @@ def run_course_recommend_app():
                     st.dataframe(result_df)
                 else:
                     st.dataframe(recommend_course_list)
+                    recommend_course_list.to_csv('data/recommend_result.csv')
+                    recommend_result = pd.read_csv("data/recommend_result.csv")
+
+                    def download_link(object_to_download, download_filename, download_link_text):
+                        if isinstance(object_to_download,pd.DataFrame):
+                            object_to_download = object_to_download.to_csv(index=False)
+                            b64 = base64.b64encode(object_to_download.encode('utf-8-sig')).decode()
+                            return f'<a href="data:file/txt;base64,{b64}" download="{download_filename}">{download_link_text}</a>'
+
+                    tmp_download_link = download_link(recommend_result, 'recommend_result.csv', 'Download csv for cource recommend.')
+                    st.markdown(tmp_download_link, unsafe_allow_html=True)
 
     except Exception as e:
         st.header('ERROR: Data inconsistency. Check data format to be uploaded.')
