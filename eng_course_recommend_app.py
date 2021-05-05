@@ -112,7 +112,7 @@ def run_course_recommend_app():
                             b64 = base64.b64encode(object_to_download.encode('utf-8-sig')).decode()
                             return f'<a href="data:file/txt;base64,{b64}" download="{download_filename}">{download_link_text}</a>'
 
-                    tmp_download_link = download_link(recommend_result, 'recommend_result.csv', 'Download csv for cource recommend.')
+                    tmp_download_link = download_link(recommend_result, 'recommend_result.csv', 'Download the csv of the displayed cource recommend.')
                     st.markdown(tmp_download_link, unsafe_allow_html=True)
 
     except Exception as e:
